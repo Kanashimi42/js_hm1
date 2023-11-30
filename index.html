@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1
+        // let start = parseInt(prompt("Введите начало диапазона:"));
+        // let end = parseInt(prompt("Введите конец диапазона:"));
+        // let sum = 0;
+
+        // for (let i = start; i <= end; i++) {
+        //     sum += i;
+        // }
+
+        // alert("Сумма чисел в диапазоне:" + sum);
+
+        //2
+        // let num1 = parseInt(prompt("Введите первое число:"));
+        // let num2 = parseInt(prompt("Введите второе число:"));
+        // let number = 1;
+
+        // for (let i = 1; i <= num1 && i <= num2; i++) {
+        //     if (num1 % i === 0 && num2 % i === 0) {
+        //         number = i;
+        //     }
+        // }
+
+        // alert("Наибольший общий делитель:" + number);
+
+        //3
+        // let number = parseInt(prompt("Введите число:"));
+
+        // alert("Делители числа", number + ":");
+
+        // for (let i = 1; i <= number; i++) {
+        //     if (number % i === 0) {
+        //         document.write(i);
+        //         document.write(' ');
+        //     }
+        // }
+
+
+        //4
+        // let number = prompt("Введите число:");
+        // let count = 0;
+
+        // while (number > 0) {
+        //     number = Math.floor(number / 10);
+        //     count++;
+        // }
+
+        // alert("Количество цифр: " + count);
+
+        //5
+        // let positive = 0;
+        // let negative = 0;
+        // let zero = 0;
+        // let even = 0;
+        // let odd = 0;
+
+        // for (let i = 0; i < 10; i++) {
+        //     let inputNumber = prompt("Введите число:");
+        //     inputNumber = Number(inputNumber);
+
+        //     if (inputNumber > 0) {
+        //         positive++;
+        //     } else if (inputNumber < 0) {
+        //         negative++;
+        //     } else {
+        //         zero++;
+        //     }
+
+        //     if (inputNumber % 2 === 0) {
+        //         even++;
+        //     } else {
+        //         odd++;
+        //     }
+        // }
+
+        // document.write("Положительные: " + positive);
+        // document.write(' ');
+        // document.write("Отрицательные: " + negative);
+        // document.write(' ');
+        // document.write("Нули: " + zero);
+        // document.write(' ');
+        // document.write("Четные: " + even);
+        // document.write(' ');
+        // document.write("Нечетные: " + odd);
+
+
+        //6
+        // let cont = true;
+
+        // while (cont) {
+        //     let num1 = prompt("Введите первое число:");
+        //     let operator = prompt("Введите оператор (+, -, *, /):");
+        //     let num2 = prompt("Введите второе число:");
+
+        //     num1 = Number(num1);
+        //     num2 = Number(num2);
+
+        //     let result;
+
+        //     switch (operator) {
+        //         case "+":
+        //             result = num1 + num2;
+        //             break;
+        //         case "-":
+        //             result = num1 - num2;
+        //             break;
+        //         case "*":
+        //             result = num1 * num2;
+        //             break;
+        //         case "/":
+        //             result = num1 / num2;
+        //             break;
+        //         default:
+        //             alert("Неверный оператор");
+        //             continue;
+        //     }
+
+        //     alert("Результат: " + result);
+
+        //     let response = prompt("Хотите решить еще один пример? (1 - да/2 - нет)");
+        //     cont = response === "1";
+        // }
+
+
+
+        //7
+        // let userInput = prompt("Введите число:");
+        // let shiftAmount = prompt("На сколько цифр сдвинуть число?");
+        // let numArray = userInput.split("");
+
+        // for (let i = 0; i < shiftAmount; i++) {
+        //     let shiftedDigit = numArray.shift();
+        //     numArray.push(shiftedDigit);
+        // }
+
+        // let shiftedNumber = numArray.join("");
+        // alert('Результат сдвига:' + shiftedNumber);
+
+
+        //8
+        // let daysOfWeek = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
+
+        // do {
+        //     for (let day of daysOfWeek) {
+        //         let userResponse = confirm(day + 'Хотите увидеть следующий день?');
+        //         if (!userResponse) {
+        //             break;
+        //         }
+        //     }
+        // } while (confirm("Продолжить цикл вывода дней недели?"));
+
+        //9
+        // for (let i = 2; i <= 9; i++) {
+        //     for (let j = 1; j <= 10; j++) {
+        //         document.write(i + '*' + j + '=' + i * j);
+        //         document.write("<br>");
+        //     }
+        // }
+
+        //10
+
+        let minRange = 0;
+        let maxRange = 100;
+        let userNumber;
+
+        do {
+            let guess = Math.floor((minRange + maxRange) / 2);
+            let userResponse = prompt('Ваше число > ' + guess + ', < ' + guess + ' или == ' + guess + ' ?');
+
+            if (userResponse === ">") {
+                minRange = guess + 1;
+            } else if (userResponse === "<") {
+                maxRange = guess - 1;
+            } else if (userResponse === "==") {
+                userNumber = guess;
+                alert('Вы загадали число:' + userNumber);
+            } else {
+                alert("Некорректный ввод. Используйте только '>', '<' или '=='.");
+            }
+        } while (userNumber === undefined);
+
+
+    </script>
+</body>
+
+</html>
